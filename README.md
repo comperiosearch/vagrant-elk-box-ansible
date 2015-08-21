@@ -44,7 +44,7 @@ HQ elasticsearch plugin at [http://localhost:9200/_plugin/HQ/](http://localhost:
 vagrant up # starts the machine
 vagrant ssh # ssh to the machine
 vagrant halt # shut down the machine
-vagrant provision # applies the bash and puppet provisioning
+vagrant provision # applies the bash and ansible provisioning
 
 ```
 
