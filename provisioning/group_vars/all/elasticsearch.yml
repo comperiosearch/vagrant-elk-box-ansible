@@ -1,0 +1,21 @@
+---
+# Elasticsearch Ansible Sample Variables
+
+elasticsearch_version: 1.7.1
+# heap size should be set to half of total memory on instance
+elasticsearch_heap_size: 1000m
+elasticsearch_index_number_of_shards: 1
+elasticsearch_index_number_of_replicas: 0
+elasticsearch_cluster_name:  ansible-es
+elasticsearch_node_name: ansible-es-1
+elasticsearch_apt_java_package: oracle-java8-installer
+elasticsearch_service_startonboot: yes
+elasticsearch_plugins:
+  - { name: 'royrusso/elasticsearch-HQ'}
+
+
+#marvel
+elasticsearch_plugin_marvel_version: latest
+elasticsearch_plugin_marvel_agent_enabled: "false"
+elasticsearch_http_cors_enabled: "true"
+elasticsearch_http_cors_allow_origin: "http://localhost:5601"

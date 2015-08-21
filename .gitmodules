@@ -1,0 +1,12 @@
+[submodule "provisioning/roles/ansible-elasticsearch"]
+	path = provisioning/roles/ansible-elasticsearch
+	url = https://github.com/comperiosearch/ansible-elasticsearch.git
+	branch = master
+[submodule "provisioning/roles/ansible-kibana"]
+	path = provisioning/roles/ansible-kibana
+	url = https://github.com/comperiosearch/ansible-kibana.git
+	branch = develop
+[submodule "provisioning/roles/ansible-logstash"]
+	path = provisioning/roles/ansible-logstash
+	url = https://github.com/comperiosearch/logstash-role.git
+	branch = master

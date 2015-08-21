@@ -1,0 +1,31 @@
+---
+
+#########################
+# Elasticsearch install #
+#########################
+
+- hosts: master
+  sudo: true
+  tags: elasticsearch
+  roles:
+    - ansible-elasticsearch
+
+#########################
+# Logstash install #
+#########################
+
+- hosts: master
+  sudo: true
+  tags: logstash
+  roles:
+    - ansible-logstash
+
+#########################
+# Kibana install #
+#########################
+
+- hosts: master
+  sudo: true
+  tags: kibana
+  roles:
+    - ansible-kibana

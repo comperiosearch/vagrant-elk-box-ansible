@@ -1,0 +1,6 @@
+
+## kibana
+kibana_version: "4.1.1"
+kibana_log: /var/log/kibana.log
+kibana_log_rotate_count: 5
+kibana_log_rotate_interval: daily

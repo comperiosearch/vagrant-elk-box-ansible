@@ -1,0 +1,26 @@
+logstash_version: "1.5"
+logstash_defaults: |
+        LS_USER=root
+        LS_GROUP=root
+        LS_HEAP_SIZE="256m"
+
+logstash_inputs: |
+ file {
+    path => ["/vagrant/include/example-logs/testlog"]
+    start_position => "beginning"
+    codec => "json"
+    type => "json"
+  }
+logstash_filters: |
+
+logstash_outputs: |
+ file {
+    path => "/var/log/logstash/output.log"
+    }
+ elasticsearch {
+    document_type => "example"
+    host => "127.0.0.1"
+    cluster => "ansible-esicsearch"
+    protocol => "http"
+  }
+
