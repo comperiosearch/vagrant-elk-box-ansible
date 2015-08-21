@@ -20,7 +20,7 @@ logstash_outputs: |
  elasticsearch {
     document_type => "example"
     host => "127.0.0.1"
-    cluster => "ansible-esicsearch"
+    cluster => "ansible-es"
     protocol => "http"
   }
 

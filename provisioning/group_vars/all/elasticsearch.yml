@@ -3,6 +3,7 @@
 
 elasticsearch_version: 1.7.1
 # heap size should be set to half of total memory on instance
+elasticsearch_timezone: UTC
 elasticsearch_heap_size: 1000m
 elasticsearch_index_number_of_shards: 1
 elasticsearch_index_number_of_replicas: 0

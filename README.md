@@ -43,7 +43,7 @@ Controlled by
 
 ```bash
 
- sudo service elasticsearch-es-01
+ sudo service elasticsearch
 
 ```
 
