@@ -6,6 +6,17 @@ This is a new version where puppet has been replaced by ansible.
 [VirtualBox](https://www.virtualbox.org/) and [Vagrant](http://www.vagrantup.com/) (minimum version 1.6)
 Other providers, like VMWare may work, not tested!
 
+## Checkout the project
+This repo now uses submodules.
+IMPORTANT!!
+You MUST checkout the submodules or nothing will work.
+
+    git clone --recurse-submodules  https://github.com/comperiosearch/vagrant-elk-box-ansible.git
+
+If you need to pull in latest changes, please uses
+
+     git pull --recurse-submodules
+     git submodule update --init --recursive
 
 ## Up and SSH
 
@@ -58,18 +69,9 @@ Controlled by
 
 ```
 
-If you want some sample Logstash data to play with, run
-
-```bash
-
-/opt/logstash/bin/logstash agent -f /vagrant/confs/logstash/logstash.conf
-
-```
-It will index into elasticsearch
-reading from example log file at [/vagrant/example-logs/testlog](/example-logs/testlog)
+Some sample Logstash data is installed on provisioning. Reading in log lines from include/example-logs/testlog
 
 ##Kibana 
-Manual install, start up script provided in this repo.
 Controlled by
 
 ```bash
@@ -78,3 +80,5 @@ sudo service kibana
 
 ```
 
+## Ansible init script
+Code for Ansible init script was heavily inspired by this blog http://akrabat.com/provisioning-with-ansible-within-the-vagrant-guest/
