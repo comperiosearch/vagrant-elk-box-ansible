@@ -7,8 +7,8 @@ elasticsearch_timezone: UTC
 elasticsearch_heap_size: 1000m
 elasticsearch_index_number_of_shards: 1
 elasticsearch_index_number_of_replicas: 0
-elasticsearch_cluster_name:  ansible-es
-elasticsearch_node_name: ansible-es-1
+elasticsearch_cluster_name:  vagrant-es
+elasticsearch_node_name: vagrant-es-1
 elasticsearch_apt_java_package: oracle-java8-installer
 elasticsearch_service_startonboot: yes
 elasticsearch_plugins:
