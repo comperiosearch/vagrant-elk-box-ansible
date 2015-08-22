@@ -7,9 +7,8 @@ This is meant to replace the old [Vagrant ELK box](https://github.com/comperiose
 Other providers, like VMWare may work, not tested!
 
 ## Checkout the project
-This repo now uses submodules.
-IMPORTANT!!
-You MUST checkout the submodules or nothing will work.
+This repo uses git submodules.
+To clone the repo, use the --recurse-submodules option.  The submodules contain role definitions and nothing will work without that, unfortunately.  
 
     git clone --recurse-submodules  https://github.com/comperiosearch/vagrant-elk-box-ansible.git
 
@@ -80,5 +79,7 @@ sudo service kibana
 
 ```
 
-## Ansible init script
-Code for Ansible init script was heavily inspired by this blog http://akrabat.com/provisioning-with-ansible-within-the-vagrant-guest/
+## Ansible provisioning
+Ansible is installed on the guest machine by the setup.sh bash script which is run as part of vagrant provisioning. Vagrant does actually have a "built-in" provisioner for ansible, but that is supposed to run on the host machine, and ansible does not run on windows making that option unavailable for a large amount of users. Myself being one of the unfortunate we roll our own setup installing ansible on the guest machine.  The last step in the provisioning script setup.sh is to run the playbook located at provisioning/playbook.yml. 
+
+The code for the Ansible init script was heavily inspired by this blog http://akrabat.com/provisioning-with-ansible-within-the-vagrant-guest/
