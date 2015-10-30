@@ -31,7 +31,7 @@ Elasticsearch will be available on the host machine at [http://localhost:9200/](
 
 Kibana at [http://localhost:5601/](http://localhost:5601/)
 
-
+Sense, the wonderful elasticsearch query machine is found at [http://localhost:5601/app/sense](http://localhost:5601/app/sense)
 
 ## Vagrant commands
 
