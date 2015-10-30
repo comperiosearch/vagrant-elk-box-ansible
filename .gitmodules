@@ -1,8 +1,10 @@
 [submodule "provisioning/roles/ansible-elasticsearch"]
+  branch=v2.0
 	path = provisioning/roles/ansible-elasticsearch
 	url = https://github.com/comperiosearch/ansible-elasticsearch.git
 	branch = master
 [submodule "provisioning/roles/ansible-kibana"]
+  branch=v4.2
 	path = provisioning/roles/ansible-kibana
 	url = https://github.com/comperiosearch/ansible-kibana.git
 	branch = develop

@@ -17,7 +17,8 @@ then
 fi
 
 cd /vagrant/provisioning
+#move ansible inventory hosts file into  default location
+cp localhost.ini /etc/ansible/hosts
 #undo executable bits on synced files since ansible gets grumpy
-cp localhost.ini /tmp
-chmod -X /tmp/localhost.ini
-ansible-playbook playbook.yml --connection=local -i /tmp/localhost.ini -vv
+chmod -X /etc/ansible/hosts
+ansible-playbook playbook.yml -vv

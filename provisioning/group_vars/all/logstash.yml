@@ -1,4 +1,4 @@
-logstash_version: "1.5"
+logstash_version: 2.0
 logstash_defaults: |
         LS_USER=root
         LS_GROUP=root
@@ -19,8 +19,6 @@ logstash_outputs: |
     }
  elasticsearch {
     document_type => "example"
-    host => "127.0.0.1"
-    cluster => "ansible-es"
-    protocol => "http"
+    hosts => "127.0.0.1"
   }
 
