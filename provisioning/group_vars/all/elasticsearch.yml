@@ -1,7 +1,7 @@
 ---
 # Elasticsearch Ansible Sample Variables
 
-elasticsearch_version: 2.0.0
+elasticsearch_version: 2.1.0
 elasticsearch_network_host: 0.0.0.0
 # heap size should be set to half of total memory on instance
 elasticsearch_timezone: UTC
@@ -23,3 +23,4 @@ elasticsearch_plugin_marvel_version: latest
 elasticsearch_plugin_marvel_agent_enabled: "false"
 elasticsearch_http_cors_enabled: "true"
 elasticsearch_http_cors_allow_origin: "http://localhost:5601"
+elasticsearch_pid_dir: /run/elasticsearch

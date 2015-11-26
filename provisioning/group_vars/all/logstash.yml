@@ -1,4 +1,4 @@
-logstash_version: 2.0
+logstash_version: 2.1
 logstash_defaults: |
         LS_USER=root
         LS_GROUP=root

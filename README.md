@@ -1,4 +1,4 @@
-This vagrant box installs elasticsearch 2.0, logstash 2.0 and kibana 4.2
+This vagrant box installs elasticsearch 2.1, logstash 2.1 and kibana 4.3
 This is meant to replace the old [Vagrant ELK box](https://github.com/comperiosearch/vagrant-elk-box),  where provisioning by puppet has been replaced by ansible.
 
 ## Prerequisites
@@ -33,18 +33,8 @@ Kibana at [http://localhost:5601/](http://localhost:5601/)
 
 Sense, the wonderful elasticsearch query machine is found at [http://localhost:5601/app/sense](http://localhost:5601/app/sense)
 
-## Vagrant commands
 
-
-```
-vagrant up # starts the machine
-vagrant ssh # ssh to the machine
-vagrant halt # shut down the machine
-vagrant provision # applies the bash and ansible provisioning
-
-```
-
-##Elasticsearch
+### Elasticsearch
 Installed via debian package, started on boot.
 Controlled by
 
@@ -55,7 +45,7 @@ Controlled by
 ```
 
 
-##Logstash
+### Logstash
 Installed via debian package, started on boot.
 Controlled by
 
@@ -67,7 +57,7 @@ Controlled by
 
 Some sample Logstash data is installed on provisioning. Reading in log lines from include/example-logs/testlog
 
-##Kibana 
+### Kibana 
 Controlled by
 
 ```bash
@@ -77,6 +67,6 @@ sudo service kibana
 ```
 
 ## Ansible provisioning
-Ansible is installed on the guest machine by the setup.sh bash script which is run as part of vagrant provisioning. Vagrant does actually have a "built-in" provisioner for ansible, but that is supposed to run on the host machine, and ansible does not run on windows making that option unavailable for a large amount of users. Myself being one of the unfortunate we roll our own setup installing ansible on the guest machine.  The last step in the provisioning script setup.sh is to run the playbook located at provisioning/playbook.yml. 
+Ansible is installed on the guest machine by the setup.sh bash script which is run as part of vagrant provisioning. Vagrant does actually have a "built-in" provisioner for ansible, but it runs on the host machine, making that option unavailable on windows. Myself being one of the unfortunate we roll our own setup installing ansible on the guest machine.  The last step in the provisioning script is running the playbook located at provisioning/playbook.yml. 
 
 The code for the Ansible init script was heavily inspired by this blog http://akrabat.com/provisioning-with-ansible-within-the-vagrant-guest/

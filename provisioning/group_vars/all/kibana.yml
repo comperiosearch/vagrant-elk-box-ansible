@@ -1,12 +1,13 @@
 
 ## kibana
-kibana_version: 4.2.0
+kibana_version: 4.3.0
 kibana_use_repo: False
 kibana_log: /var/log/kibana.log
 kibana_log_rotate_count: 5
 kibana_log_rotate_interval: daily
-kibana_user: vagrant
-kibana_group: vagrant
+kibana_user: kibana
+kibana_group: kibana
 kibana_plugins:
  - { name: elastic/sense,  shortname: sense }
+ - {name: kibana/timelion, shortname: timelion }
  #- { name: elasticsearch/marvel/latest, shortname: marvel }
