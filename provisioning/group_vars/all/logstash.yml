@@ -5,20 +5,21 @@ logstash_defaults: |
         LS_HEAP_SIZE="256m"
 
 logstash_inputs: |
- file {
-    path => ["/vagrant/include/example-logs/testlog"]
-    start_position => "beginning"
-    codec => "json"
-    type => "json"
-  }
+ tcp {
+     port => "1514"
+     tags => ["input_heroku_syslog"]
+ }
 logstash_filters: |
-
+ if "input_heroku_syslog" in [tags] {
+   grok {
+     match => ["message", "%{SYSLOG5424PRI}%{NONNEGINT:syslog5424_ver} +(?:%{TIMESTAMP_ISO8601:timestamp}|-) +(?:%{HOSTNAME:heroku_drain_id}|-) +(?:%{WORD:heroku_source}|-) +(?:%{DATA:heroku_dyno}|-) +(?:%{WORD:syslog5424_msgid}|-) +(?:%{SYSLOG5424SD:syslog5424_sd}|-|) +%{GREEDYDATA:heroku_message}"]
+   }
+   mutate { rename => ["heroku_message", "message"] }
+   kv { source => "message" }
+   syslog_pri { syslog_pri_field_name => "syslog5424_pri" }
+ }
 logstash_outputs: |
- file {
-    path => "/var/log/logstash/output.log"
-    }
  elasticsearch {
     document_type => "example"
     hosts => "127.0.0.1"
   }
-
