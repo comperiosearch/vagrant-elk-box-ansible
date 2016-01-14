@@ -21,6 +21,19 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       vb.customize ["modifyvm", :id, "--cpus", "2", "--memory", "4096"]
   end
 
+  config.vm.provider :aws do |aws, override|
+    aws.access_key_id = ENV['AWS_ACCESS_KEY']
+    aws.secret_access_key = ENV['AWS_SECRET_KEY']
+    aws.keypair_name = ENV['AWS_KEYNAME']
+    aws.ami = "ami-47a23a30"
+    aws.region = "eu-west-1"
+    aws.instance_type = "m3.medium"
+
+    override.vm.box = "dummy"
+    override.ssh.username = "ubuntu"
+    override.ssh.private_key_path = ENV['AWS_KEYPATH']
+  end
+
   config.vm.provider "vmware_fusion" do |v, override|
      ## the puppetlabs ubuntu 14-04 image might work on vmware, not tested? 
     v.box = "phusion/ubuntu-14.04-amd64"
