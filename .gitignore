@@ -186,3 +186,10 @@ logs/
 tmp/
 project/
 esbackups/
+
+################
+### Webstorm
+##################
+
+.idea
+
