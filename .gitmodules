@@ -12,3 +12,9 @@
 	path = provisioning/roles/ansible-logstash
 	url = https://github.com/comperiosearch/logstash-role.git
 	branch = master
+[submodule "provisioning/roles/ansible-kibana3"]
+	path = provisioning/roles/ansible-kibana3
+	url = https://github.com/deimosfr/ansible-kibana.git
+[submodule "provisioning/roles/ansible-es-packetbeat"]
+	path = provisioning/roles/ansible-es-packetbeat
+	url = https://github.com/mrlesmithjr/ansible-es-packetbeat.git
