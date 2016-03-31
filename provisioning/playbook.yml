@@ -29,3 +29,12 @@
   tags: kibana
   roles:
     - ansible-kibana
+#########################
+# packetbeat install #
+#########################
+
+- hosts: master
+  sudo: true
+  tags: packetbeat
+  roles:
+    - ansible-es-packetbeat
